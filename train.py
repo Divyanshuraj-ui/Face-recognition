@@ -26,52 +26,53 @@ window.configure()  # background='grey')
 window.grid_rowconfigure(0, weight=1)
 window.grid_columnconfigure(0, weight=1)
 
-path = "im0.jpg"
-path2 = "im1.jpg"
+path = "OIP.jpg"
+# path2 = "im1.jpg"
 # Creates a Tkinter-compatible photo image, which can be used everywhere Tkinter expects an image object.
 img = ImageTk.PhotoImage(Image.open(path))
-img2 = ImageTk.PhotoImage(Image.open(path2))
+# img2 = ImageTk.PhotoImage(Image.open(path2))
 # The Label widget is a standard Tkinter widget used to display a text or image on the screen.
 panel = tk.Label(window, image=img)
 
-panel2 = tk.Label(window, image=img2)
+# panel2 = tk.Label(window, image=img2)
 panel.pack(side="left", fill="x", expand="no")
-panel2.pack(side="left", fill="x", expand="no")
-message = tk.Label(window, text="Face-Recognition-Attendance-System", bg="grey",
-                   fg="black", width=50, height=3, font=('arial', 30, 'italic bold underline'))
+panel.place(x=60,y=200)
+# panel2.pack(side="left", fill="x", expand="no")
+message = tk.Label(window, text="Face-Recognition-Attendance-System", bg="#1f3c88",
+                   fg="white", width=50, height=3, font=('arial', 30, ' bold '))
 
-message.place(x=80, y=20)
+message.place(x=30, y=20)
 
 lbl = tk.Label(window, text="EMP ID", width=20, height=2,
-               fg="white", bg="green", font=('times', 15, ' bold '))
+               fg="white", bg="#6C63FF", font=('times', 15, ' bold '))
 lbl.place(x=400, y=200)
 
-txt = tk.Entry(window, width=20, bg="green",
+txt = tk.Entry(window, width=20, bg="#6C63FF",
                fg="white", font=('times', 15, ' bold '))
 txt.place(x=700, y=215)
 
 lbl2 = tk.Label(window, text="Employee Name", width=20, fg="white",
-                bg="green", height=2, font=('times', 15, ' bold '))
+                bg="#6C63FF", height=2, font=('times', 15, ' bold '))
 lbl2.place(x=400, y=300)
 
-txt2 = tk.Entry(window, width=20, bg="green",
+txt2 = tk.Entry(window, width=20, bg="#6C63FF",
                 fg="white", font=('times', 15, ' bold '))
 txt2.place(x=700, y=315)
 
 lbl3 = tk.Label(window, text="Notification : ", width=20, fg="white",
-                bg="green", height=2, font=('times', 15, ' bold underline '))
+                bg="#6C63FF", height=2, font=('times', 15, ' bold underline '))
 lbl3.place(x=400, y=400)
 
-message = tk.Label(window, text="", bg="green", fg="white", width=30,
+message = tk.Label(window, text="", bg="#6C63FF", fg="white", width=30,
                    height=2, activebackground="yellow", font=('times', 15, ' bold '))
 message.place(x=700, y=400)
 
 lbl3 = tk.Label(window, text="Attendance : ", width=20, fg="white",
-                bg="green", height=2, font=('times', 15, ' bold  underline'))
-lbl3.place(x=400, y=600)
+                bg="#6C63FF", height=2, font=('times', 15, ' bold  underline'))
+lbl3.place(x=350, y=600)
 
 
-message2 = tk.Label(window, text="", fg="white", bg="green",
+message2 = tk.Label(window, text="", fg="white", bg="#6C63FF",
                     activeforeground="green", width=30, height=2, font=('times', 15, ' bold '))
 message2.place(x=700, y=600)
 
@@ -255,24 +256,22 @@ def TrackImages():
     message2.configure(text=res)
 
 
-clearButton = tk.Button(window, text="Clear", command=clear, fg="red", bg="yellow",
+clearButton = tk.Button(window, text="Clear",borderwidth=3,relief="solid", command=clear, fg="white", bg="#008080",
                         width=20, height=2, activebackground="Red", font=('times', 15, ' bold '))
 clearButton.place(x=950, y=200)
-clearButton2 = tk.Button(window, text="Clear", command=clear2, fg="red", bg="yellow",
+clearButton2 = tk.Button(window, text="Clear", command=clear2, borderwidth=2,relief="solid", fg="white", bg="#008080",
                          width=20, height=2, activebackground="Red", font=('times', 15, ' bold '))
 clearButton2.place(x=950, y=300)
-takeImg = tk.Button(window, text="Take Images", command=TakeImages, fg="red", bg="yellow",
+takeImg = tk.Button(window, text="Take Images", command=TakeImages, borderwidth=3,relief="solid", fg="white", bg="#008080",
                     width=20, height=3, activebackground="Red", font=('times', 15, ' bold '))
-takeImg.place(x=200, y=500)
-trainImg = tk.Button(window, text="Train Images", command=TrainImages, fg="red",
-                     bg="yellow", width=20, height=3, activebackground="Red", font=('times', 15, ' bold '))
-trainImg.place(x=500, y=500)
-trackImg = tk.Button(window, text="Track Images", command=TrackImages, fg="red",
-                     bg="yellow", width=20, height=3, activebackground="Red", font=('times', 15, ' bold '))
-trackImg.place(x=800, y=500)
-quitWindow = tk.Button(window, text="Quit", command=quit, fg="red", bg="yellow",
+takeImg.place(x=60, y=500)
+trainImg = tk.Button(window, text="Train Images", command=TrainImages, borderwidth=3,relief="solid", fg="white", bg="#008080", width=20, height=3, activebackground="Red", font=('times', 15, ' bold '))
+trainImg.place(x=360, y=500)
+trackImg = tk.Button(window, text="Track Images", command=TrackImages, borderwidth=3,relief="solid", fg="white", bg="#008080", width=20, height=3, activebackground="Red", font=('times', 15, ' bold '))
+trackImg.place(x=660, y=500)
+quitWindow = tk.Button(window, text="Quit", command=quit, borderwidth=3,relief="solid", fg="white", bg="#008080",
                        width=20, height=3, activebackground="Red", font=('times', 15, ' bold '))
-quitWindow.place(x=1100, y=500)
+quitWindow.place(x=980, y=500)
 
 
 window.mainloop()
